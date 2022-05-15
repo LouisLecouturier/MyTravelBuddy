@@ -32,7 +32,7 @@ const EspacePro = () => {
       
     return (
         <div className={styles.EspacePro}>
-            <div className={styles.component}>components</div>
+            
             <div className={styles.container}>
                 <div className={styles.content}>
                     <h3>Nom : </h3>

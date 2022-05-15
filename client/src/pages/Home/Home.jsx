@@ -6,8 +6,11 @@ import { ReactComponent as Spinner } from "../../assets/icons/spin.svg";
 
 import { getIcon } from "../../components/shared/Pin/getIcon";
 import Place from "../../components/shared/Place/Place";
+import Affiche from "../../components/shared/Affiche/Affiche";
 import styles from "./Home.module.scss";
 import useClickedOutside2 from "../../hooks/useClickedOutside2";
+import useClickedOutside3 from "../../hooks/useClickedOutside3";
+
 
 
 const Home = () => {
@@ -29,6 +32,12 @@ const Home = () => {
 
   const[ isShown, setIsShown] = useState(false);
   const { target2, button2, isShown2, setIsShown2 } = useClickedOutside2();
+  const { target3, button3, isShown3, setIsShown3 } = useClickedOutside3();
+  const [messageEnfant ,setMessageEnfant] = useState(false)
+  
+  function reponseEnfant(message){
+    setIsShown3(message);
+  }
   
 
 
@@ -53,19 +62,28 @@ const Home = () => {
                 console.log(isShown2)}
                 
             }}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
+                
               </Marker>
             </MapContainer>
+
             {isShown2 && 
         <div className={styles.background}>
           <div className={styles.containerPlace} ref={target2}>
             <Place/>
           </div>
         </div>}
+
+        {isShown3 && 
+        <div className={styles.background}>
+        <div className={styles.containerPlace} ref={target3}>
+          <Affiche/>
+        </div>
+      </div>}
+             
           </main>
-          <MainMenu />
+          
+          <MainMenu ref={button3} reponse={reponseEnfant}/>
+
         </div>
       )}
 

@@ -24,7 +24,6 @@ function App() {
           <Route exact path="/system" element={<System />} />
           <Route exact path="/auth/register" element={<Register />} />
           <Route exact path="/auth/login" element={<Login />} />
-
           <Route exact path="/structures" element={<StructureLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="profile" element={<EspacePro />} />

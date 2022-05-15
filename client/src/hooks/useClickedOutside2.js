@@ -21,6 +21,7 @@ export default function useClickedOutside2() {
     };
 
     document.addEventListener("mousedown", checkIfClickedOutside2);
+    console.log();
     return () => {
       // Cleanup the event listener
       document.removeEventListener("mousedown", checkIfClickedOutside2);

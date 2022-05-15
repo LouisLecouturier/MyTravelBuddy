@@ -1,7 +1,7 @@
 import styles from "./Place.module.scss";
 import show from "../../../assets/images/Place/show.jpg";
 import star from "../../../assets/images/Place/star-solid.svg";
-import useClickedOutside from "../../../hooks/useClickedOutside";
+
 const Place = () => {
   return (
     
